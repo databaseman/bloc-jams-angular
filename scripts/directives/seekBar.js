@@ -48,7 +48,6 @@
                      };
                  };
 
-<<<<<<< HEAD
                  var notifyOnChange = function (newValue) {  // This was in the wrong location in the checkpoint
                          if (typeof scope.onChange === 'function') {
                              scope.onChange({
@@ -57,16 +56,6 @@
                          }
                      };
                  
-=======
-                 var notifyOnChange = function (newValue) {
-                     if (typeof scope.onChange === 'function') {
-                         scope.onChange({
-                             value: newValue
-                         });
-                     }
-                 };
-
->>>>>>> 5323b83c42e42d9b2cb37a35825cc44ed3758389
                  scope.onClickSeekBar = function (event) {
                      var percent = calculatePercent(seekBar, event);
                      scope.value = percent * scope.max;
@@ -82,10 +71,6 @@
                          });
                      });
 
-<<<<<<< HEAD
-                     
-=======
->>>>>>> 5323b83c42e42d9b2cb37a35825cc44ed3758389
                      $document.bind('mouseup.thumb', function () {
                          $document.unbind('mousemove.thumb');
                          $document.unbind('mouseup.thumb');
