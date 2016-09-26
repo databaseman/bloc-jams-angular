@@ -65,7 +65,7 @@
          * @param {Object} song
          */
         SongPlayer.play = function (song) {
-            song = song || SongPlayer.currentSong;
+            song = song || SongPlayer.currentSong; //The first condition occurs when we call the methods from the Album view's song rows,                                                      // and the second condition occurs when we call the methods from the player bar.
             if (SongPlayer.currentSong !== song) {
                 setSong(song);
                 playSong(song);
@@ -96,7 +96,6 @@
 
             if (currentSongIndex < 0) {
                 // stopSong(song);
-                console.log(currentAlbum.songs.length);
                 var song = currentAlbum.songs[currentAlbum.songs.length - 1];
                 setSong(song);
                 playSong(song);
