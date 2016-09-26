@@ -20,10 +20,30 @@
         SongPlayer.currentTime = null;
 
         /**
+         * @desc Current playback volume 
+         * @type {Number}
+         */
+        SongPlayer.volume = 0;
+
+        /**
+         * @function setVolume
+         * @desc Set volume 
+         * @param {Number} volume level 0 - 100 
+         */
+        var setVolume = function (volume) {
+            console.log(volume + '--------');
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(volume);
+                SongPlayer.volume = volume;
+            }
+        }
+        
+        /**
          * @function setSong
          * @desc Stops currently playing song and loads new audio file as currentBuzzObject
          * @param {Object} song
          */
+        
         var setSong = function (song) {
             if (currentBuzzObject) {
                 currentBuzzObject.stop();

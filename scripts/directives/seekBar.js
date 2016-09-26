@@ -23,6 +23,7 @@
 
                  attributes.$observe('value', function (newValue) {
                      scope.value = newValue;
+                     console.log( "observerd value="+scope.value );
                  });
 
                  attributes.$observe('max', function (newValue) {
