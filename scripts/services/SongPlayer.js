@@ -23,18 +23,16 @@
          * @desc Current playback volume 
          * @type {Number}
          */
-        SongPlayer.volume = 0;
+        SongPlayer.volume = 80;
 
         /**
          * @function setVolume
          * @desc Set volume 
          * @param {Number} volume level 0 - 100 
          */
-        var setVolume = function (volume) {
-            console.log(volume + '--------');
+        SongPlayer.setVolume = function (volume) {
             if (currentBuzzObject) {
                 currentBuzzObject.setVolume(volume);
-                SongPlayer.volume = volume;
             }
         }
         
@@ -54,7 +52,7 @@
                 formats: ['mp3'],
                 preload: true
             });
-
+            
             currentBuzzObject.bind('timeupdate', function () {
                 $rootScope.$apply(function () {
                     SongPlayer.currentTime = currentBuzzObject.getTime();
@@ -85,7 +83,7 @@
          * @param {Object} song
          */
         SongPlayer.play = function (song) {
-            song = song || SongPlayer.currentSong; //The first condition occurs when we call the methods from the Album view's song rows,                                                      // and the second condition occurs when we call the methods from the player bar.
+            song = song || SongPlayer.currentSong; //The first condition occurs when we call the methods from the Album view's song rows,                                                    // and the second condition occurs when we call the methods from the player bar.
             if (SongPlayer.currentSong !== song) {
                 setSong(song);
                 playSong(song);

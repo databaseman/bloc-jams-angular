@@ -23,7 +23,6 @@
 
                  attributes.$observe('value', function (newValue) {
                      scope.value = newValue;
-                     console.log( "observerd value="+scope.value );
                  });
 
                  attributes.$observe('max', function (newValue) {
@@ -52,7 +51,7 @@
                  var notifyOnChange = function (newValue) {  // This was in the wrong location in the checkpoint
                          if (typeof scope.onChange === 'function') {
                              scope.onChange({
-                                 value: newValue
+                                 value: newValue    // "value" has to match the argument name in on-change in player_bar.html
                              });
                          }
                      };
