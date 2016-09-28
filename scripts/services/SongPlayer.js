@@ -19,6 +19,8 @@
          */
         SongPlayer.currentTime = null;
 
+        SongPlayer.isMuted = false;
+        
         /**
          * @desc Current playback volume 
          * @type {Number}
@@ -152,6 +154,20 @@
         SongPlayer.setCurrentTime = function (time) {
             if (currentBuzzObject) {
                 currentBuzzObject.setTime(time);
+            }
+        };
+
+        SongPlayer.mute = function () {
+            if (currentBuzzObject) {
+                currentBuzzObject.mute();
+                SongPlayer.isMuted=true;
+            }
+        };
+        
+        SongPlayer.unmute = function () {
+            if (currentBuzzObject) {
+                currentBuzzObject.unmute();
+                SongPlayer.isMuted=false;
             }
         };
 
