@@ -25,7 +25,7 @@
          * @desc Current playback volume 
          * @type {Number}
          */
-        SongPlayer.volume = 80;
+        SongPlayer.volume = 30;
 
         /**
          * @function setVolume
@@ -35,6 +35,7 @@
         SongPlayer.setVolume = function (volume) {
             if (currentBuzzObject) {
                 currentBuzzObject.setVolume(volume);
+                SongPlayer.volume = Math.round(volume);
             }
         }
         
@@ -65,6 +66,7 @@
             });
 
             SongPlayer.currentSong = song;
+            SongPlayer.setVolume(SongPlayer.volume);
         };
 
         /**

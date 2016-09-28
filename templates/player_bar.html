@@ -31,6 +31,7 @@
             </a>    
             <seek-bar value="{{ playerBar.songPlayer.volume }}" max=100 on-change="playerBar.songPlayer.setVolume(value)">
             </seek-bar>
+            <div class="seek-control current-volume">{{ playerBar.songPlayer.volume }}</div>
         </div>
     </div>
 </section>

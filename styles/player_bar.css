@@ -93,6 +93,12 @@
      top: 0.5rem;
  }
  
+.seek-control .current-volume {
+     position: absolute;
+     right: 0;
+     top: 0.5rem;
+ }
+
  .seek-bar {
      height: 0.25rem;
      background-color: rgba(255, 255, 255, 0.3);
